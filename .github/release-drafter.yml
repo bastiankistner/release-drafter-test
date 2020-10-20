@@ -1,0 +1,45 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'feat'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+  - title: '🧰 Housekeeping'
+    labels: 
+      - 'chore'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+version-resolver:
+  major:
+    labels:
+      - 'feature'
+  minor:
+    labels:
+      - 'chore'
+  patch:
+    labels:
+      - 'fix'
+  default: patch
+template: |
+  # Release v$RESOLVED_VERSION
+
+  ## Rollout
+
+  Planned for: 
+
+  - [ ] editors need to be informed about potential CMS downtimes
+  - [ ] SRE required for support (e.g. for database migrations)
+
+  Affected services:
+  - 
+
+  ## Changes
+
+  $CHANGES
+
+  ## Contributors
+
+  $CONTRIBUTORS

@@ -1,0 +1,15 @@
+service-a:
+  - service-a/**/*
+
+service-b:
+  - service-b/**/*
+
+service-c:
+  - service-c/**/*
+
+deployment:
+  - .github/**/*.{yml,yaml}
+
+documentation: "**/*.md"
+
+
