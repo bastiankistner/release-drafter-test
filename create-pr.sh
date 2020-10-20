@@ -1,4 +1,4 @@
-KEY=$RANDOM
+KEY=${KEY:=$RANDOM}
 SERVICE=${SERVICE:=a}
 PR=${PR:=feat}
 
