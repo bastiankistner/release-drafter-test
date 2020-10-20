@@ -1,4 +1,4 @@
-KEY=1234
+KEY=$RANDOM
 SERVICE=a
 PR=feat
 
