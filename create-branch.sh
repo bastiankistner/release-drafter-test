@@ -9,7 +9,7 @@ git checkout master
 git pull
 
 # create a new branch feat/KEY-1234_service-a
-git checkout -b feat/KEY-${KEY}_service-${SERVICE}
+git checkout -b ${PR}/KEY-${KEY}_service-${SERVICE}
 
 # write a line into a file
 echo "$(date)--${RANDOM}" >>service-${SERVICE}/file.txt
