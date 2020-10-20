@@ -1,6 +1,6 @@
-KEY=1234
-SERVICE=a
-PR=feat
+KEY=$RANDOM
+SERVICE=${SERVICE:=a}
+PR=${PR:=feat}
 
 # checkout master
 git checkout master
