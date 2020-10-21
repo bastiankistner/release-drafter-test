@@ -2,6 +2,9 @@ KEY=${KEY:=$RANDOM}
 SERVICE=${SERVICE:=a}
 PR=${PR:=feat}
 
+git branch -D chore/KEY-${KEY}_service-${SERVICE}
+git branch -D origin/${PR}/KEY-${KEY}_service-${SERVICE}
+
 # checkout master
 git checkout master
 
