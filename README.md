@@ -1,43 +1,26 @@
 # Release Drafter Test
 
-## Commands
+## Conclusions
 
-```sh
-# create a branch and check it out
-git checkout -b feat/KEY-${RANDOM}
+- it doesn't matter if we rebase or merge or squash, a PR will show up in the release notes, if there has been a PR during the rollout (e.g. to merge/squash/rebase from dev > staging or staging > master)
+  
+## Questions
+- is there any other way to synchronize dev and staging with master after a release than force-push?
 
-# write a line into a file
-echo "$(date)--${RANDOM}" >> service-a/file.txt
+### Release preparation
 
-#  push branch
-git push -u origin HEAD
-
-# create a PR
-gh pr create --title "KEY-1234 my title" --body "and this is my body" --base master
-```
+1. a rebase from dev > staging will change SHAs for included commits
+2. a merge from dev > staging will keep SHAs and introduce a new merge commit
 
 
+### TEST SCENARIOS
 
-## Test
+#### We release into master
+- [x] what will the release notes look like, if we go with a merge commit from dev > staging and staging > master
+  > the release notes will also include the PR from staging > master and the one from dev > staging, even though we won't find this commit in the history
+- [x] will the SHAs change if we go with a rebase from staging > master during a release ?
+  > yes, they will be screwed and unrelated to dev and staging!
 
-```sh
-KEY=1234
-SERVICE=a
-PR=feat
-
-# checkout master
-git checkout master
-
-# create a new branch feat/KEY-1234_service-a
-git checkout -b feat/KEY-${KEY}_service-${SERVICE}
-
-# write a line into a file
-echo "$(date)--${RANDOM}" >> service-${SERVICE}/file.txt
-
-# add, commit, push
-git add . && git commit -m'a commit' && git push -u origin HEAD
-
-# create PR
-gh pr create --title "KEY-${KEY} service-${SERVICE}" --body "my cool body for service-${SERVICE}" --base dev
-
-```
+#### We fix something on staging during an ongoing release
+- [ ] will direct commits against staging (e.g. to fix sth) show up in release notes?
+- [ ] will PRs against staging (e.g. to fix sth) show up in release notes? (if so, how could we avoid that?)
