@@ -7,4 +7,7 @@ sleep 5
 gh pr create --title "RELEASE staging > master" --body "this is a release" --base master --head staging
 sleep 60
 
-gh pr merge staging --delete-branch=false --rebase
+# gh pr merge staging --delete-branch=false --rebase
+
+# reset staging and dev
+# git checkout master ; git pull --rebase ; git push --force origin master:dev ; git push --force origin master:staging
