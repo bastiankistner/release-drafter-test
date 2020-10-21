@@ -2,8 +2,16 @@ KEY=${KEY:=$RANDOM}
 SERVICE=${SERVICE:=a}
 PR=${PR:=feat}
 
+# delete potentially existing local branch
+git branch -D ${PR}/KEY-${KEY}_service-${SERVICE}
+# delete potentially existing remote branch
+git push origin --delete ${PR}/KEY-${KEY}_service-${SERVICE}
+
 # checkout master
 git checkout master
+
+# reset
+git reset --hard
 
 # pull
 git pull
