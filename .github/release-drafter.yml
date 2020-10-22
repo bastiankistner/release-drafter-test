@@ -33,10 +33,7 @@ template: |
   - [ ] editors need to be informed about potential CMS downtimes
   - [ ] SRE required for support (e.g. for database migrations)
 
-  Affected services:
-  - 
-
-  ## Changes
+  ## CHANGELOG
 
   $CHANGES
 
