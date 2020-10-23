@@ -1,0 +1,14 @@
+name: Lint Branch Name
+on: pull_request
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint branch name
+        uses: lekterable/branchlint-action@v1.0.0
+        with:
+          allowed: |
+            dev
+            staging
+            master
+            /(feat|fix|chore)/BR24-\d{4}/i
