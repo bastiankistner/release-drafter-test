@@ -11,4 +11,4 @@ jobs:
             dev
             staging
             master
-            /(feat|fix|chore)/BR24-\d{4}/i
+            /(feat|fix|chore)/BR24-\d{1,4}[_-][a-zA-Z0-9-]+/i

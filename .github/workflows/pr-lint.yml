@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: seferov/pr-lint-action@master
       with:
-        title-regex: '^BR24-\d{1,4}\s'
+        title-regex: '^BR24-\d{1,4}'
         title-regex-flags: 'g' # optional
         error-message: 'Add Jira ID to your title' # optional
