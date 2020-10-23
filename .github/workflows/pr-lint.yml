@@ -10,6 +10,5 @@ jobs:
     steps:
     - uses: seferov/pr-lint-action@master
       with:
-        title-regex: '^BR24-\d{1,4}'
-        title-regex-flags: 'g' # optional
-        error-message: 'Add Jira ID to your title' # optional
+        title-regex: '(^BR24-\d{1,4}|QA|ROLLOUT)'
+        error-message: 'PR title must follow "BR24-XXYY My short and expressive title"' # optional
